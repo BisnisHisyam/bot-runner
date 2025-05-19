@@ -1,13 +1,18 @@
-name: Bot Simulator
+name: Bot VPS Simulasi
 
 on:
   workflow_dispatch:
 
 jobs:
-  run-bot:
+  vps-bot:
     runs-on: ubuntu-latest
     steps:
-      - name: Jalankan Bot
+      - name: Setup Python & Tools
         run: |
-          echo "Bot aktif dari GitHub runner!"
-          sleep 60  # Simulasi jalan selama 1 menit
+          sudo apt update
+          sudo apt install -y python3 nmap
+
+      - name: Simulasi Bot VPS
+        run: |
+          python3 -c "print('Bot online dan siap kirim data...')"
+          curl ifconfig.me  # lihat IP publik GitHub bot
