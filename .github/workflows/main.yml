@@ -1,0 +1,13 @@
+name: Bot Simulator
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-bot:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Jalankan Bot
+        run: |
+          echo "Bot aktif dari GitHub runner!"
+          sleep 60  # Simulasi jalan selama 1 menit
